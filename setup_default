@@ -5,8 +5,10 @@ export WORK_DIR=$(pwd)
 ###############################################
 #########   CROSS COMPILER RISCV  #############
 ###############################################
-export CC="/opt/riscv-2023.10.18/bin/riscv64-unknown-elf-gcc"
-export CC_INSTALLATION_PATH="/opt/riscv-2023.10.18/"
+# export CC="/opt/riscv-2023.10.18/bin/riscv64-unknown-elf-gcc"
+# export CC_INSTALLATION_PATH="/opt/riscv-2023.10.18/"
+export CC="/usr/bin/riscv64-linux-gnu-gcc"
+export CC_INSTALLATION_PATH="/usr/riscv64-linux-gnu/"
 ## optimization flags for the compiler 
 export OPTIMIZATION_FLAGS="-O0 "
 
@@ -14,15 +16,15 @@ export OPTIMIZATION_FLAGS="-O0 "
 ######### ARCHITECTURAL SIMULATOR #############
 ###############################################
 
-export GEM5_INSTALLATION_PATH="/opt/gem5/build"
+export GEM5_INSTALLATION_PATH="/home/ubuntu20lts/gem5/build"
 export GEM5_ISA="RISCV"
 export GEM5_VARIANT="opt"
 
 
 #Select one of this OoO CPU
-export GEM5_SIMULATION_SCRIPT="./gem5/riscv_o3_custom.py"
+# export GEM5_SIMULATION_SCRIPT="./gem5/riscv_o3_custom.py"
 #export GEM5_SIMULATION_SCRIPT="./gem5/riscv_o3_simple.py"
-#export GEM5_SIMULATION_SCRIPT="./gem5/riscv_o3_two_level_caches.py"
+ export GEM5_SIMULATION_SCRIPT="./gem5/riscv_o3_two_level_caches.py"
 
 export RESULTS_DIR=${WORK_DIR}/results
 
@@ -33,7 +35,7 @@ mkdir ${RESULTS_DIR}
 fi 
 
 ## util path from gem5 rep
-export GEM5_SRC="/opt/gem5/"
+export GEM5_SRC="/home/ubuntu20lts/gem5/"
 export GEM5_UTIL=${GEM5_SRC}/util/
 
 ### EXPORTING gem5 utilities for python
